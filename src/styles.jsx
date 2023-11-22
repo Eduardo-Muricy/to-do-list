@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { FcCheckmark } from "react-icons/fc";
+import { FcEmptyTrash } from "react-icons/fc";
 export const Container = styled.div`
 
 display: flex;
@@ -59,7 +60,14 @@ line-height: 3px;
 text-align: center;
 color: rgba(255, 255, 255, 1);
 
+cursor: pointer;
+&:hover{
+  opacity: 0.8;
+}
 
+&:active{
+  opacity: 0.6;
+}
 `
 
 
@@ -76,7 +84,7 @@ height: 60px;
 border-radius: 5px;
 margin-top: 30px;
 
-background: ${(props)=>props.isFinished ? '#e8ff8b' : '#e4e4e4'};
+background: ${(props)=>props.$isFinished ? '#e8ff8b' : '#e4e4e4'};
 box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.2);
 list-style-type: none;
 `
@@ -88,4 +96,16 @@ font-size: 15px;
 font-weight: 400;
 line-height: 18px;
 letter-spacing: 0px;
+`
+
+export const Trash = styled(FcEmptyTrash)`
+cursor: pointer;
+width: 20px;
+height: 20px;
+`
+
+export const Check = styled(FcCheckmark)`
+width: 20px;
+height: 20px;
+cursor: pointer;
 `
